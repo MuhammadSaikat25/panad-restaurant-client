@@ -18,6 +18,18 @@ const OrderOnline = () => {
                 <div className="carousel-item">
                    <img src={img4} alt="" />
                 </div>
+                <div className="carousel-item">
+                    <img src={img3} alt="" />
+                </div>
+                <div className="carousel-item">
+                   <img src={img4} alt="" />
+                </div>
+                <div className="carousel-item">
+                    <img src={img3} alt="" />
+                </div>
+                <div className="carousel-item">
+                   <img src={img4} alt="" />
+                </div>
             </div>
         </section>
     );

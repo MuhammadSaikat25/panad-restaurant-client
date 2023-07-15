@@ -4,6 +4,7 @@ import carouseImg2 from '../../assets/home/02.jpg'
 import carouseImg3 from '../../assets/home/03.png'
 import carouseImg4 from '../../assets/home/04.jpg'
 import OrderOnline from './OrderOnline';
+import Restaurant from './Restaurant';
 
 const Home = () => {
     return (
@@ -49,6 +50,13 @@ const Home = () => {
                 <SectionTitle header={'---From 11:00am to 10:00pm---'} subHeading={'ORDER ONLINE'}></SectionTitle>
                 <OrderOnline></OrderOnline>
             </div>
+
+            {/* ==============Panda Restaurant section============ */}
+            <div className="max-w-6xl w-full mx-auto">
+                <Restaurant></Restaurant>
+            </div>
+
+
         </>
     );
 };
