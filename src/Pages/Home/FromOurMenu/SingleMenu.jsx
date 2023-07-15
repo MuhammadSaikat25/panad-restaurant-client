@@ -1,6 +1,5 @@
 
 const SingleMenu = ({data}) => {
-    console.log(data)
     const {name,image,price,recipe}=data
 
     return (

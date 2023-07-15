@@ -5,7 +5,7 @@ import img4 from '../../assets/home/slide4.jpg'
 const OrderOnline = () => {
     return (
         <section>
-            <div className="carousel carousel-end rounded-box flex gap-4">
+            <div className="carousel carousel-end rounded-box flex gap-4 ">
                 <div className="carousel-item">
                     <img src={img} alt="Drink" />
                 </div>

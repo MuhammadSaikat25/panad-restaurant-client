@@ -71,7 +71,7 @@ const Home = () => {
             </div>
 
             {/* ============ Featured section========= */}
-            <div className="max-w-6xl w-full mx-auto">
+            <div>
                 <Featured></Featured>
             </div>
         </>
