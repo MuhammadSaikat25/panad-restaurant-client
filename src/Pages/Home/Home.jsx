@@ -3,11 +3,13 @@ import carouselImg from '../../assets/home/01.jpg'
 import carouseImg2 from '../../assets/home/02.jpg'
 import carouseImg3 from '../../assets/home/03.png'
 import carouseImg4 from '../../assets/home/04.jpg'
+import CallUs from './CallUs';
+import Featured from './Featured/Featured';
 import FromOurMenu from './FromOurMenu/FromOurMenu';
 import OrderOnline from './OrderOnline';
 import Restaurant from './Restaurant';
 const Home = () => {
-   
+
     return (
         <>
             {/*  ========= Header Section==========  */}
@@ -60,10 +62,18 @@ const Home = () => {
             {/* ==============From our Menu section============ */}
             <div className="max-w-6xl w-full mx-auto">
                 <SectionTitle header={'---Check it out---'} subHeading={'FROM OUR MENU'}></SectionTitle>
-               <FromOurMenu></FromOurMenu>
+                <FromOurMenu></FromOurMenu>
             </div>
 
-        
+            {/* =========== Call us section========= */}
+            <div className="max-w-6xl w-full mx-auto">
+                <CallUs></CallUs>
+            </div>
+
+            {/* ============ Featured section========= */}
+            <div className="max-w-6xl w-full mx-auto">
+                <Featured></Featured>
+            </div>
         </>
     );
 };
