@@ -1,6 +1,7 @@
 import './logIn.css'
 import logInImg from '../../assets/others/authentication2.png'
 import { FaGoogle } from 'react-icons/fa';
+import {  NavLink } from 'react-router-dom';
 
 
 const LogIn = () => {
@@ -17,7 +18,7 @@ const LogIn = () => {
                         <input className='w-full p-1' type="email" name="email" id='Email' placeholder='Email' />
                         <input className='w-full p-1' type="password" name="password" placeholder='Password' id='Password' />
                         <button className='w-full p-1 bg-[#D1A054] text-white'>Sing In</button>
-                        <h1 className='text-center text-[#D1A054]'>New here? Create a New Account</h1>
+                        <NavLink className=' flex justify-center text-center text-[#D1A054]  ' to={'/singUp'}>New here? Create a New Account</NavLink>
                         <h1 className='text-center'>Or sign in with</h1>
                         <h1><FaGoogle className=' mx-auto cursor-pointer' size={20} color='blue'></FaGoogle></h1>
                     </form>
