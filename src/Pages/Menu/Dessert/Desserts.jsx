@@ -4,9 +4,14 @@ import Common from "../../../Shared/CommonView/Common";
 const Desserts = () => {
     const [dessert,setDessert]=useState([])
     const [loading,setLoading]=useState(false)
+    const token=localStorage.getItem('jwt-token')
     useEffect(()=>{
         setLoading(true)
-        fetch(`${import.meta.env.VITE_SERVER}/getMenus`)
+        fetch(`${import.meta.env.VITE_SERVER}/getMenus`,{
+            headers:{
+                authorization:`bearer ${token}`
+            }
+        })
             .then(res=>res.json())
             .then(data=>{
                 const offered=data.filter(data=>data.category==='dessert')

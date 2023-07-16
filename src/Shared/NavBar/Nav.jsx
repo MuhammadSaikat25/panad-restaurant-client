@@ -2,11 +2,13 @@ import { NavLink } from "react-router-dom";
 import { BsCartCheck } from 'react-icons/bs';
 import { useContext } from "react";
 import { AuthContext } from "../../Firebase/AuthProvider";
+import GetAllOrders from "../../Utils/GetAllOrders";
 
 
 const Nav = () => {
     const { user, logOut } = useContext(AuthContext)
-    
+    const [menu]=GetAllOrders()
+    console.log(menu)
     return (
         <nav>
             <div className="navbar fixed top-0 z-50 bg-slate-600  bg-opacity-30 text-white  flex justify-between">
@@ -19,9 +21,7 @@ const Nav = () => {
                             <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600' : ''} to={'/'}>Home</NavLink></li>
                             <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600' : ''} to={'/menu'}>Menu</NavLink></li>
                             <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600' : ''} to={'/shop'}>Shop</NavLink></li>
-                            <li><button className={({ isActive }) => isActive ? 'text-orange-600 relative' : ''}>
-                                <span className="">  <BsCartCheck size={20} className="lg:mt-1"></BsCartCheck> <h1 className="absolute -top-2 left-7">0</h1></span>
-                            </button></li>
+
                             <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600 relative' : ''} to={'/myBooking'}>Booing</NavLink></li>
                             <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600 relative' : ''} to={'/Dashboard'}>Dashboard</NavLink></li>
                             {
@@ -47,9 +47,6 @@ const Nav = () => {
                         <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={'/shop'}>Shop</NavLink>
                         <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={'/myBooking'}>Booking</NavLink>
                         <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={'/Dashboard'}>Dashboard</NavLink>
-                        <button>
-                            <span className=""><BsCartCheck size={20} className="lg:mt-1"></BsCartCheck><h1 className="absolute -top-3 -right-1">0</h1></span>
-                        </button>
                         {
                             user ?
                                 <>
