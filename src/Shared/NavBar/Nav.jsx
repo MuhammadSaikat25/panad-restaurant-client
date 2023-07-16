@@ -5,8 +5,8 @@ import { AuthContext } from "../../Firebase/AuthProvider";
 
 
 const Nav = () => {
-    const { user,logOut } = useContext(AuthContext)
-
+    const { user, logOut } = useContext(AuthContext)
+    
     return (
         <nav>
             <div className="navbar fixed top-0 z-50 bg-slate-600  bg-opacity-30 text-white  flex justify-between">
@@ -17,18 +17,16 @@ const Nav = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-sm text-black dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 gap-3">
                             <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600' : ''} to={'/'}>Home</NavLink></li>
-                            <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600' : ''}>Contact Us</NavLink></li>
                             <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600' : ''} to={'/menu'}>Menu</NavLink></li>
                             <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600' : ''} to={'/shop'}>Shop</NavLink></li>
-                            <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600 relative' : ''}>
+                            <li><button className={({ isActive }) => isActive ? 'text-orange-600 relative' : ''}>
                                 <span className="">  <BsCartCheck size={20} className="lg:mt-1"></BsCartCheck> <h1 className="absolute -top-2 left-7">0</h1></span>
-                            </NavLink></li>
-                            <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600' : ''}>Profile</NavLink></li>
-                            <li><button>log Out</button></li>
-                            <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} >log Out</NavLink>
+                            </button></li>
+                            <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600 relative' : ''} to={'/myBooking'}>Booing</NavLink></li>
+                            <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600 relative' : ''} to={'/Dashboard'}>Dashboard</NavLink></li>
                             {
                                 user ? <>
-                                    <li><NavLink onClick={()=>logOut()} className={({ isActive }) => isActive ? 'text-yellow-300' : ''} >log Out</NavLink></li>
+                                    <li><NavLink onClick={() => logOut()}>log Out</NavLink></li>
                                     <li><NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={"/singUp"}>Sing Up</NavLink></li>
                                 </>
                                     :
@@ -45,27 +43,25 @@ const Nav = () => {
                 <div className="navbar-center hidden lg:flex mr-9">
                     <div className=" flex gap-4">
                         <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={'/'}>Home</NavLink>
-                        {/* <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''}>Contact Us</NavLink> */}
                         <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={'/menu'}>Menu</NavLink>
                         <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={'/shop'}>Shop</NavLink>
-                        <NavLink className={({ isActive }) => isActive ? 'text-yellow-300 relative' : ''}>
-                            {/* <span className="">  <BsCartCheck size={20} className="lg:mt-1"></BsCartCheck> <h1 className="absolute -top-3 -right-1">0</h1></span> */}
-                        </NavLink>
-                        {/* <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''}>Profile</NavLink> */}
+                        <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={'/myBooking'}>Booking</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={'/Dashboard'}>Dashboard</NavLink>
+                        <button>
+                            <span className=""><BsCartCheck size={20} className="lg:mt-1"></BsCartCheck><h1 className="absolute -top-3 -right-1">0</h1></span>
+                        </button>
                         {
                             user ?
-                                 <>
-                                    <NavLink onClick={()=>logOut()} className={({ isActive }) => isActive ? 'text-yellow-300' : ''} >log Out</NavLink>
-                                    <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={"/singUp"}>Sing Up</NavLink>
-                                 </>
-                                :
                                 <>
-                                    <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={'/login'}>log In</NavLink>
+                                    <NavLink onClick={() => logOut()} >log Out</NavLink>
                                     <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={"/singUp"}>Sing Up</NavLink>
                                 </>
-
+                                :
+                                <>
+                                    <NavLink onClick={() => logOut()} className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={'/login'}>log In</NavLink>
+                                    <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={"/singUp"}>Sing Up</NavLink>
+                                </>
                         }
-
                     </div>
                 </div>
             </div>

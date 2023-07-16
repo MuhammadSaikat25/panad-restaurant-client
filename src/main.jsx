@@ -18,7 +18,11 @@ import LogIn from './Shared/LogIn/LogIn';
 import SingUP from './Shared/SingUp/SingUP';
 import PrivateRoute from './Firebase/PrivateRoute';
 import Dashboard from './Dashbord/Dashboard';
-
+import MyBooking from './Pages/MyBooking/MyBooking';
+import DashboardProfile from './Dashbord/DashboardProfile';
+import AddItem from './Dashbord/Admin/AddItem';
+import ManageItem from './Dashbord/Admin/ManageItem';
+import AllUser from './Dashbord/Admin/Alluser/AllUser';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "shop",
         element: <PrivateRoute><Shop></Shop></PrivateRoute>
+      },
+      {
+        path:"myBooking",
+        element:<MyBooking></MyBooking>
       }
     ]
   },
@@ -46,6 +54,28 @@ const router = createBrowserRouter([
   {
     path:"/singUp",
     element:<SingUP></SingUP>
+  },
+  {
+    path:"Dashboard",
+    element:<Dashboard></Dashboard>,
+    children:[
+      {
+        path:'DashProfile',
+        element:<DashboardProfile></DashboardProfile>
+      },
+      {
+        path:'addItem',
+        element:<AddItem></AddItem>
+      },
+      {
+        path:'manageItem',
+        element:<ManageItem></ManageItem>
+      },
+      {
+        path:'allUser',
+        element:<AllUser></AllUser>
+      }
+    ]
   }
   
 ]);
