@@ -1,4 +1,13 @@
-.bg-img{
-    background-image: url('../../../assets/menu/banner3.jpg');
-    background-size: cover;
+.bg-img {
+  background-image: url("../../../assets/menu/banner3.jpg");
+  background-size: cover;
+}
+@media only screen and (max-width: 600px) {
+  .bg-img {
+    background-image: url("../../../assets/menu/banner3.jpg");
+    background-size: contain;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
 }
