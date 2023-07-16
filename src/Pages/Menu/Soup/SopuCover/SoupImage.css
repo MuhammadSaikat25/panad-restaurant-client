@@ -1,0 +1,13 @@
+.soup-img {
+    background-image: url("../../../../assets/menu/soup-bg.jpg");
+    background-size: cover;
+  }
+  @media only screen and (max-width: 600px) {
+    .soup-img {
+      background-image:  url("../../../../assets/menu/soup-bg.jpg");
+      background-size: contain;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+  }

@@ -18,7 +18,7 @@ const TodayOffer = () => {
     },[])
     
     return (
-        <div>
+        <div className="mb-14">
             <SectionTitle header={"---Don't miss---"} subHeading={"TODAY'S OFFER"}></SectionTitle>
             {
                 loading?<h1 className="text-center text-xl lg:text-2xl text-cyan-950">loading......</h1>

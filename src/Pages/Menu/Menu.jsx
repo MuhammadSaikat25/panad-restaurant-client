@@ -2,6 +2,8 @@ import DessertCoverImg from "./Dessert/DessertCoverImg/DessertCoverImg";
 import Desserts from "./Dessert/Desserts";
 import MenuCoverImg from "./MenuCover/MenuCoverImg";
 import TodayOffer from "./MenuCover/TodayOffer";
+import SoupImage from "./Soup/SopuCover/SoupImage";
+import Soup from "./Soup/Soup";
 
 const Menu = () => {
     return (
@@ -12,6 +14,12 @@ const Menu = () => {
             <div className="">
                 <DessertCoverImg></DessertCoverImg>
                 <Desserts></Desserts>
+            </div>
+
+            {/* =========== Soup Section========= */}
+            <div className="">
+                <SoupImage></SoupImage>
+                <Soup></Soup>
             </div>
         </div>
     );

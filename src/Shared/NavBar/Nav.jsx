@@ -13,7 +13,7 @@ const Nav = () => {
                             <li><NavLink className={({isActive})=>isActive?'text-orange-600':''}>Home</NavLink></li>
                             <li><NavLink className={({isActive})=>isActive?'text-orange-600':''}>Contact Us</NavLink></li>
                             <li><NavLink className={({isActive})=>isActive?'text-orange-600':''} to={'/menu'}>Menu</NavLink></li>
-                            <li><NavLink className={({isActive})=>isActive?'text-orange-600':''}>Shop</NavLink></li>
+                            <li><NavLink className={({isActive})=>isActive?'text-orange-600':''} to={'/shop'}>Shop</NavLink></li>
                             <li><NavLink className={({isActive})=>isActive?'text-orange-600':''}>0</NavLink></li>
                             <li><NavLink className={({isActive})=>isActive?'text-orange-600':''}>Profile</NavLink></li>
 
@@ -26,7 +26,7 @@ const Nav = () => {
                         <NavLink className={({isActive})=>isActive?'text-yellow-300':''}>Home</NavLink>
                         <NavLink className={({isActive})=>isActive?'text-yellow-300':''}>Contact Us</NavLink>
                         <NavLink className={({isActive})=>isActive?'text-yellow-300':''} to={'/menu'}>Menu</NavLink>
-                        <NavLink className={({isActive})=>isActive?'text-yellow-300':''}>Shop</NavLink>
+                        <NavLink className={({isActive})=>isActive?'text-yellow-300':''} to={'/shop'}>Shop</NavLink>
                         <NavLink className={({isActive})=>isActive?'text-yellow-300':''}>0</NavLink>
                         <NavLink className={({isActive})=>isActive?'text-yellow-300':''}>Profile</NavLink>
                     </div>

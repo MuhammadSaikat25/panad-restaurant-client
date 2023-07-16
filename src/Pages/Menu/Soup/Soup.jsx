@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import Common from "../../../Shared/CommonView/Common";
 
-const Desserts = () => {
-    const [dessert,setDessert]=useState([])
+const Soup = () => {
+
+    const [soup,setSoup]=useState([])
     const [loading,setLoading]=useState(false)
-    console.log(dessert)
+    console.log(soup)
     useEffect(()=>{
         setLoading(true)
         fetch(`${import.meta.env.VITE_SERVER}/getMenus`)
             .then(res=>res.json())
             .then(data=>{
-                const offered=data.filter(data=>data.category==='dessert')
-                setDessert(offered)
+                const offered=data.filter(data=>data.category==='soup')
+                setSoup(offered)
                 setLoading(false)
             })
     },[])
@@ -22,7 +23,7 @@ const Desserts = () => {
                 :
                 <div className="max-w-6xl mx-auto w-full grid grid-cols-1 gap-10 lg:grid-cols-2">
                     {
-                        dessert.map(data=><Common data={data} key={data._id}></Common>)
+                        soup.map(data=><Common data={data} key={data._id}></Common>)
                     }
                 </div>
             }
@@ -30,4 +31,4 @@ const Desserts = () => {
     );
 };
 
-export default Desserts;
+export default Soup;

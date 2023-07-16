@@ -1,0 +1,14 @@
+.shop-img {
+    background-image: url("../../../assets/shop/banner2.jpg");
+    background-size: cover;
+  }
+  @media only screen and (max-width: 600px) {
+    .shop-img {
+      background-image: url("../../../assets//shop/banner2.jpg");
+      background-size: contain;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+  }
+  
