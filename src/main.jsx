@@ -14,6 +14,8 @@ import Home from './Pages/Home/Home';
 import Menu from './Pages/Menu/Menu';
 import Shop from './Pages/Shop/Shop';
 import AuthProvider from './Firebase/AuthProvider';
+import LogIn from './Shared/LogIn/LogIn';
+import SingUP from './Shared/SingUp/SingUP';
 
 
 const router = createBrowserRouter([
@@ -35,6 +37,14 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path:"/login",
+    element:<LogIn></LogIn>
+  },
+  {
+    path:"/singUp",
+    element:<SingUP></SingUP>
+  }
 ]);
 const queryClient = new QueryClient()
 

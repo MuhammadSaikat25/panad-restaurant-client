@@ -10,7 +10,7 @@ const Nav = () => {
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 gap-3">
+                        <ul tabIndex={0} className="menu menu-sm text-black dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 gap-3">
                             <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600' : ''} to={'/'}>Home</NavLink></li>
                             <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600' : ''}>Contact Us</NavLink></li>
                             <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600' : ''} to={'/menu'}>Menu</NavLink></li>
@@ -19,6 +19,9 @@ const Nav = () => {
                             <span className="">  <BsCartCheck size={20} className="lg:mt-1"></BsCartCheck> <h1 className="absolute -top-2 left-7">0</h1></span>
                             </NavLink></li>
                             <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600' : ''}>Profile</NavLink></li>
+                            <li><button>log Out</button></li>
+                            <li><NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={'/login'}>log In</NavLink></li>
+                            <li><NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={"/singUp"}>Sing Up</NavLink></li>
 
                         </ul>
                     </div>
@@ -34,6 +37,9 @@ const Nav = () => {
                           <span className="">  <BsCartCheck size={20} className="lg:mt-1"></BsCartCheck> <h1 className="absolute -top-3 -right-1">0</h1></span>
                         </NavLink>
                         <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''}>Profile</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={'/login'}>log In</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={"/singUp"}>Sing Up</NavLink>
+                        <button>log Out</button>
                     </div>
                 </div>
             </div>
