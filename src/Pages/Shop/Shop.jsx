@@ -5,7 +5,7 @@ import ShopCover from "./ShopCover/ShopCover";
 
 const Shop = () => {
     const category = FoodCategory()
-    const [foodCategory, setFoodCategory] = useState('')
+    const [foodCategory, setFoodCategory] = useState('soup')
     const [food, setFood] = useState([])
     useEffect(() => {
         fetch(`${import.meta.env.VITE_SERVER}/getMenus`)

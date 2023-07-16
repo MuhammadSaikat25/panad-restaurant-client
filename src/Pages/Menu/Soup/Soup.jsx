@@ -5,7 +5,6 @@ const Soup = () => {
 
     const [soup,setSoup]=useState([])
     const [loading,setLoading]=useState(false)
-    console.log(soup)
     useEffect(()=>{
         setLoading(true)
         fetch(`${import.meta.env.VITE_SERVER}/getMenus`)

@@ -1,7 +1,6 @@
 
 const Common = ({ data }) => {
     const { name, image, price, recipe } = data
-    console.log(data)
     return (
         <div className="lg:flex items-center lg:gap-5 border p-3 ">
             <img style={{ borderRadius: '0px 200px 200px 200px' }} className="w-[118px] h-[108px]" src={image} alt="" />

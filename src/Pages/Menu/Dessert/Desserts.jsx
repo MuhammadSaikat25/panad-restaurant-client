@@ -4,7 +4,6 @@ import Common from "../../../Shared/CommonView/Common";
 const Desserts = () => {
     const [dessert,setDessert]=useState([])
     const [loading,setLoading]=useState(false)
-    console.log(dessert)
     useEffect(()=>{
         setLoading(true)
         fetch(`${import.meta.env.VITE_SERVER}/getMenus`)
