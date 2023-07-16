@@ -45,13 +45,13 @@ const Nav = () => {
                 <div className="navbar-center hidden lg:flex mr-9">
                     <div className=" flex gap-4">
                         <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={'/'}>Home</NavLink>
-                        <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''}>Contact Us</NavLink>
+                        {/* <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''}>Contact Us</NavLink> */}
                         <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={'/menu'}>Menu</NavLink>
                         <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={'/shop'}>Shop</NavLink>
                         <NavLink className={({ isActive }) => isActive ? 'text-yellow-300 relative' : ''}>
-                            <span className="">  <BsCartCheck size={20} className="lg:mt-1"></BsCartCheck> <h1 className="absolute -top-3 -right-1">0</h1></span>
+                            {/* <span className="">  <BsCartCheck size={20} className="lg:mt-1"></BsCartCheck> <h1 className="absolute -top-3 -right-1">0</h1></span> */}
                         </NavLink>
-                        <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''}>Profile</NavLink>
+                        {/* <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''}>Profile</NavLink> */}
                         {
                             user ?
                                  <>

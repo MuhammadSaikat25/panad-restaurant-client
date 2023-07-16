@@ -16,6 +16,8 @@ import Shop from './Pages/Shop/Shop';
 import AuthProvider from './Firebase/AuthProvider';
 import LogIn from './Shared/LogIn/LogIn';
 import SingUP from './Shared/SingUp/SingUP';
+import PrivateRoute from './Firebase/PrivateRoute';
+import Dashboard from './Dashbord/Dashboard';
 
 
 const router = createBrowserRouter([
@@ -33,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: "shop",
-        element: <Shop></Shop>
+        element: <PrivateRoute><Shop></Shop></PrivateRoute>
       }
     ]
   },
@@ -45,6 +47,7 @@ const router = createBrowserRouter([
     path:"/singUp",
     element:<SingUP></SingUP>
   }
+  
 ]);
 const queryClient = new QueryClient()
 

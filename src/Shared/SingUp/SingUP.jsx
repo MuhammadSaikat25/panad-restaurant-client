@@ -4,12 +4,13 @@ import logInImg from '../../assets/others/authentication2.png'
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../Firebase/AuthProvider';
+import axios from 'axios';
 
 const SingUP = () => {
-    const { createUser } = useContext(AuthContext)
-    const navigate=useNavigate()
-    const [error,setError]=useState('')
-    
+    const { createUser, upDateUser } = useContext(AuthContext)
+    const navigate = useNavigate()
+    const [error, setError] = useState('')
+
     const handelSingUp = (e) => {
         e.preventDefault()
         const name = e.target.name.value
@@ -19,7 +20,19 @@ const SingUP = () => {
             .then(res => {
                 console.log(res.user)
                 setError('')
-                navigate('/')
+                //====== update user
+                upDateUser(name)
+                    .then(res => {
+                        const userData = {
+                            name, email
+                        }
+                        // ======= post user data in mongodb
+                        axios.post(`${import.meta.env.VITE_SERVER}/postUser`, userData)
+                            .then(res => {
+                                navigate('/')
+                            })
+                    })
+                    .catch(error => { })
             })
             .catch(error => {
                 setError(error.message)
