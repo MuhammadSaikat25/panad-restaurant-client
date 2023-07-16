@@ -13,7 +13,8 @@ const Nav = () => {
                             <li><NavLink>Home</NavLink></li>
                             <li><NavLink>Contact Us</NavLink></li>
                             <li><NavLink>Menu</NavLink></li>
-                            <li><NavLink>order</NavLink></li>
+                            <li><NavLink>Shop</NavLink></li>
+                            <li><NavLink>0</NavLink></li>
                             <li><NavLink>Profile</NavLink></li>
 
                         </ul>
@@ -24,8 +25,9 @@ const Nav = () => {
                     <div className=" flex gap-4">
                         <NavLink>Home</NavLink>
                         <NavLink>Contact Us</NavLink>
-                        <NavLink>Menu</NavLink>
-                        <NavLink>Order</NavLink>
+                        <NavLink to={'/menu'}>Menu</NavLink>
+                        <NavLink>Shop</NavLink>
+                        <NavLink>0</NavLink>
                         <NavLink>Profile</NavLink>
                     </div>
                 </div>

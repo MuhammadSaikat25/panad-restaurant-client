@@ -5,7 +5,7 @@ import { BsInstagram } from 'react-icons/bs';
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className='mt-20 lg:mt-[130px]'>
             <div className="flex text-white">
                 <div className="text-center bg-[#1F2937] w-[960px] h-[200px]">
                     <h1 className='mt-10 lg:mt-10'>Contact us</h1>
