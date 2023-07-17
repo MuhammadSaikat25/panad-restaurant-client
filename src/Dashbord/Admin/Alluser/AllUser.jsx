@@ -20,7 +20,6 @@ const AllUser = () => {
         console.log(user?._id)
         axiosSecure.delete(`${import.meta.env.VITE_SERVER}/deleteUser/${user?._id}`)
                 .then(res=>{
-                   
                     toast('Deleting user successfully')
                 })
     }

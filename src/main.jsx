@@ -18,11 +18,11 @@ import LogIn from './Shared/LogIn/LogIn';
 import SingUP from './Shared/SingUp/SingUP';
 import PrivateRoute from './Firebase/PrivateRoute';
 import Dashboard from './Dashbord/Dashboard';
-import MyBooking from './Pages/MyBooking/MyBooking';
 import DashboardProfile from './Dashbord/DashboardProfile';
 import AddItem from './Dashbord/Admin/AddItem';
 import ManageItem from './Dashbord/Admin/ManageItem';
 import AllUser from './Dashbord/Admin/Alluser/AllUser';
+import MyBooking from './Dashbord/User/MyBooking';
 
 const router = createBrowserRouter([
   {
@@ -41,10 +41,6 @@ const router = createBrowserRouter([
         path: "shop",
         element: <PrivateRoute><Shop></Shop></PrivateRoute>
       },
-      {
-        path:"myBooking",
-        element:<MyBooking></MyBooking>
-      }
     ]
   },
   {
@@ -69,11 +65,16 @@ const router = createBrowserRouter([
       },
       {
         path:'manageItem',
-        element:<ManageItem></ManageItem>
+        element:<ManageItem></ManageItem>,
+        loader:()=>fetch(`${import.meta.env.VITE_SERVER}/totalFood`)
       },
       {
         path:'allUser',
         element:<AllUser></AllUser>
+      },
+      {
+        path:'myBooking',
+        element:<MyBooking></MyBooking>
       }
     ]
   }

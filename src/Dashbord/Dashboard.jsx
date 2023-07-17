@@ -33,9 +33,7 @@ const Dashboard = () => {
             <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
              
               <li><NavLink to={'/'}>Home</NavLink></li>
-              {/* <li><NavLink to={'/dashboard/AddItem'}>Add item</NavLink></li> */}
-              {/* <li><NavLink to={'/dashboard/manageItem'}>Manage item</NavLink></li> */}
-              {/* <li><NavLink to={'/dashboard/allUser'}>All User</NavLink></li> */}
+              <li><NavLink to={'/dashboard/myBooking'}>My Booking</NavLink></li>
               <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600' : ''} to={'/menu'}>Menu</NavLink></li>
               <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600' : ''} to={'/shop'}>Shop</NavLink></li>
             </ul>

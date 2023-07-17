@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../Firebase/AuthProvider";
 
@@ -18,7 +18,9 @@ const Nav = () => {
                             <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600' : ''} to={'/'}>Home</NavLink></li>
                             <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600' : ''} to={'/menu'}>Menu</NavLink></li>
                             <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600' : ''} to={'/shop'}>Shop</NavLink></li>
-                            <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600 relative' : ''} to={'/Dashboard'}>Dashboard</NavLink></li>
+                            {
+                                user && <li><NavLink className={({ isActive }) => isActive ? 'text-orange-600 relative' : ''} to={'/Dashboard'}>Dashboard</NavLink></li>
+                            }
                             {
                                 user ? <>
                                     <li><NavLink onClick={() => logOut()}>log Out</NavLink></li>
@@ -33,16 +35,18 @@ const Nav = () => {
 
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">PANDA</a>
+                    <Link to={'/'} className="btn btn-ghost normal-case text-xl">PANDA</Link>
                 </div>
 
-                
+
                 <div className="navbar-center hidden lg:flex mr-9">
                     <div className=" flex gap-4">
                         <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={'/'}>Home</NavLink>
                         <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={'/menu'}>Menu</NavLink>
                         <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={'/shop'}>Shop</NavLink>
-                        <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={'/Dashboard'}>Dashboard</NavLink>
+                        {
+                            user && <NavLink className={({ isActive }) => isActive ? 'text-yellow-300' : ''} to={'/Dashboard'}>Dashboard</NavLink>
+                        }
                         {
                             user ?
                                 <>
@@ -63,6 +67,4 @@ const Nav = () => {
 };
 
 export default Nav;
-
-
 
