@@ -6,17 +6,24 @@ import 'react-toastify/dist/ReactToastify.css';
 const AllUser = () => {
     const [data, refetch] = GetAllUser()
     const axiosSecure = AxiosSecure()
-    console.log(data)
 
     const updateRole = (user) => {
         axiosSecure.patch(`${import.meta.env.VITE_SERVER}/makeAdmin/${user?.email}`)
             .then(data => {
                 refetch
                 toast('Make Admin successfully')
-                console.log(data.data)
+               
             })
     }
 
+    const deleteUser=(user)=>{
+        console.log(user?._id)
+        axiosSecure.delete(`${import.meta.env.VITE_SERVER}/deleteUser/${user?._id}`)
+                .then(res=>{
+                   
+                    toast('Deleting user successfully')
+                })
+    }
     return (
         <div>
             <ToastContainer></ToastContainer>
@@ -39,7 +46,7 @@ const AllUser = () => {
                                     <td >{user.email}</td>
                                     <td onClick={() => updateRole(user)}>{user.role === 'admin' ? "admin" : <button>user</button>}</td>
                                     <td>
-                                        <button className='bg-orange-500 p-1 text-white rounded'>Delete</button>
+                                        <button onClick={()=>deleteUser(user)} className='bg-orange-500 p-1 text-white rounded'>Delete</button>
                                     </td>
                                 </tr>
                             )
