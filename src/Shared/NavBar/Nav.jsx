@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import { BsCartCheck } from 'react-icons/bs';
 import { useContext } from "react";
 import { AuthContext } from "../../Firebase/AuthProvider";
 import GetAllOrders from "../../Utils/GetAllOrders";

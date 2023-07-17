@@ -8,10 +8,10 @@ const GetAllOrders = () => {
     const axiosSecure=AxiosSecure()
     const { isLoading:menuLoading, data: menu, refetch } = useQuery({
         queryKey: ['menu',user?.email],
-        enabled:!loading ,
+        enabled:!loading && !! user?.email && !! localStorage.getItem('jwt-token'),
         queryFn: async () => {
             const data = await axiosSecure(`${import.meta.env.VITE_SERVER}/getSingleUserOrder/${user?.email}`)
-            return data.data 
+            return data.data
         }
 
     })

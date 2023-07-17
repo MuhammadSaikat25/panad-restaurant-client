@@ -1,17 +1,27 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import User from "./User";
+import GetAllUser from "../../../Utils/GetAllUser";
+import AxiosSecure from "../../../Utils/AxiosSecure";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AllUser = () => {
-    const [user, setUser] = useState([])
-    useEffect(() => {
-        axios.get(`${import.meta.env.VITE_SERVER}/getAllUser`)
-            .then(data => setUser(data.data))
-    }, [])
+    const [data, refetch] = GetAllUser()
+    const axiosSecure = AxiosSecure()
+    console.log(data)
+
+    const updateRole = (user) => {
+        axiosSecure.patch(`${import.meta.env.VITE_SERVER}/makeAdmin/${user?.email}`)
+            .then(data => {
+                refetch
+                toast('Make Admin successfully')
+                console.log(data.data)
+            })
+    }
+
     return (
         <div>
+            <ToastContainer></ToastContainer>
             {
-                <div className='mt-10'>
+                data ? <div className='mt-10'>
 
                     <table className=' lg:w-[800px] lg:h-[200px] mt-10 mx-auto '>
                         <tr className='text-left bg-slate-600 text-yellow-50'>
@@ -21,21 +31,23 @@ const AllUser = () => {
                             <th>Role</th>
                             <th>Delete</th>
                         </tr>
-                        {user.map((item, i) => {
+                        {data?.map((user, i) => {
                             return (
                                 <tr className='border-t-2 border-gray-950 ' key={i}>
                                     <td>{i + 1}</td>
-                                    <td>{item.name}</td>
-                                    <td >{item.email}</td>
-                                    <td onClick={() => updateRole(item)}>{item.role === 'admin' ? "admin" : <button>user</button>}</td>
+                                    <td>{user.name}</td>
+                                    <td >{user.email}</td>
+                                    <td onClick={() => updateRole(user)}>{user.role === 'admin' ? "admin" : <button>user</button>}</td>
                                     <td>
-                                        <button onClick={() => deleteUser(item._id)} className='bg-orange-500 p-1 text-white rounded'>Delete</button>
+                                        <button className='bg-orange-500 p-1 text-white rounded'>Delete</button>
                                     </td>
                                 </tr>
                             )
                         })}
                     </table>
                 </div>
+
+                    : <h1 className="text-xl text-blue-400">loading.....</h1>
             }
         </div>
     );

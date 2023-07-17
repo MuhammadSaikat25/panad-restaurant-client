@@ -14,16 +14,16 @@ const AddFood = ({ data }) => {
             userName: user?.displayName,
             email: user?.email
         }
+
+        //  post order in mongodb
         axios.post(`${import.meta.env.VITE_SERVER}/postOrder`, bookingData)
             .then(res => {
                 toast("Wow so easy!");
-                console.log(res.data)
             })
-        console.log(bookingData)
     }
     return (
         <div>
-            {/* <ToastContainer></ToastContainer> */}
+            <ToastContainer></ToastContainer>
             <div className="shadow-lg relative lg:w-[350px] text-center" key={data._id}>
                 <img className="mx-auto" src={data.image} alt="" />
                 <div className="bg-[#F3F3F3] p-2">
