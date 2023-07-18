@@ -29,7 +29,6 @@ const AddItem = () => {
                 }
                 axiosSecure.post(`${import.meta.env.VITE_SERVER}/addFood`, foodData)
                     .then(res => {
-                        
                         toast("Added Successful")
                     })
             })

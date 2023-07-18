@@ -22,6 +22,7 @@ import AddItem from './Dashbord/Admin/AddItem';
 import ManageItem from './Dashbord/Admin/ManageItem';
 import AllUser from './Dashbord/Admin/Alluser/AllUser';
 import MyBooking from './Dashbord/User/MyBooking';
+import UpdateFood from './Dashbord/Admin/UpdateFood';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -69,7 +70,7 @@ const router = createBrowserRouter([
       {
         path:'myBooking',
         element:<MyBooking></MyBooking>
-      }
+      },
     ]
   }
   
