@@ -7,7 +7,7 @@ import { AuthContext } from "../Firebase/AuthProvider";
 const GetAllUser = () => {
     const{loading,user}=useContext(AuthContext)
     const axiosSecure=AxiosSecure()
-    const {data, isLoading:userLoading,  refetch } = useQuery({
+    const {data, isLoading:userLoading,refetch } = useQuery({
         queryKey: ['user'],
         enabled:!loading && !! user?.email && !! localStorage.getItem('jwt-token'),
         queryFn: async () => {

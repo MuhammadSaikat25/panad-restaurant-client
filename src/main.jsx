@@ -18,12 +18,10 @@ import LogIn from './Shared/LogIn/LogIn';
 import SingUP from './Shared/SingUp/SingUP';
 import PrivateRoute from './Firebase/PrivateRoute';
 import Dashboard from './Dashbord/Dashboard';
-import DashboardProfile from './Dashbord/DashboardProfile';
 import AddItem from './Dashbord/Admin/AddItem';
 import ManageItem from './Dashbord/Admin/ManageItem';
 import AllUser from './Dashbord/Admin/Alluser/AllUser';
 import MyBooking from './Dashbord/User/MyBooking';
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -55,10 +53,6 @@ const router = createBrowserRouter([
     path:"Dashboard",
     element:<Dashboard></Dashboard>,
     children:[
-      {
-        path:'DashProfile',
-        element:<DashboardProfile></DashboardProfile>
-      },
       {
         path:'addItem',
         element:<AddItem></AddItem>

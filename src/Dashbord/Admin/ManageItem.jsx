@@ -20,7 +20,7 @@ const ManageItem = () => {
 
 
     return (
-        <div className="mt-4">
+        <div className="mt-4 p-2">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-7">
                 {
                     menu?.map(food=><SingleManageItem key={food._id}food={food} ></SingleManageItem>)

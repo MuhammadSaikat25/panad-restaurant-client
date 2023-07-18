@@ -1,6 +1,6 @@
 
 const SingleManageItem = ({ food }) => {
-    const { name, price, recipe, image } = food
+    const { name, price, recipe, image ,_id} = food
     return (
         <div>
 
@@ -10,7 +10,7 @@ const SingleManageItem = ({ food }) => {
                     <h1 className="absolute top-5 right-5 bg-blue-400 text-white rounded p-1">${food.price}</h1>
                     <h1 className="font-bold">{food.name}</h1>
                     <h1 className="text-xs">{food.recipe}</h1>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between mt-2">
                         <button className="bg-rose-400 text-white p-1 rounded-md">Delete</button>
                         <button className="bg-rose-400 text-white p-1 rounded-md">Update</button>
                     </div>

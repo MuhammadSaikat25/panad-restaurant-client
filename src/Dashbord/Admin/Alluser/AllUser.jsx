@@ -4,13 +4,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const AllUser = () => {
-    const [data, refetch] = GetAllUser()
+    const [data,_, refetch] = GetAllUser()
     const axiosSecure = AxiosSecure()
-
     const updateRole = (user) => {
         axiosSecure.patch(`${import.meta.env.VITE_SERVER}/makeAdmin/${user?.email}`)
             .then(data => {
-                refetch
+                refetch()
                 toast('Make Admin successfully')
                
             })
@@ -21,6 +20,7 @@ const AllUser = () => {
         axiosSecure.delete(`${import.meta.env.VITE_SERVER}/deleteUser/${user?._id}`)
                 .then(res=>{
                     toast('Deleting user successfully')
+                    refetch()
                 })
     }
     return (
